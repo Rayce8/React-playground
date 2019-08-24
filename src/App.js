@@ -1,12 +1,26 @@
-import React from 'react';
-import Split from './composition/Split';
+import React, { Component } from 'react';
+import List from './List'
+import './App.css';
+import TheDate from './srcstate/TheDate'
+import Counter from './state/Counter'
+class App extends Component {
+  static defaultProps = {
+    store: {
+      lists: [],
+      allCards: {},
+    }
+  };
 
-function App() {
+  render() {
+     console.log(this.state)
   return (
-    <main className='App'>
-      {/* content goes here */}
-    </main>
-  );
+    <div><TheDate></TheDate>
+    <Counter></Counter></div>
+    <div><Counter count={123} /></div>
+  )
+    
+    
+  }
 }
 
 export default App;
